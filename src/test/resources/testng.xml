@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="app-exporter" verbose="5">
+
+	<test name="DomainObjectFactoryTests">
+	<classes>
+	
+		<class name="com.github.vsspt.excel.tests.ExporterTest">
+		  <methods>
+			<include name="testGenericExport" />	
+			<include name="testAnnotatedExport" />
+			<include name="testExport" />						
+		  </methods>
+		</class>
+	  </classes>
+	</test>
+
+
+</suite>
