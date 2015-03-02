@@ -81,6 +81,9 @@ ExcelReport example
 ===========
 ```java
 
+	@Resource(name = "idExcelExporter")
+	private IExcelExporter service;
+	
 	public void testExcelReport() throws ExcelReporterException, IOException {
 
 		final ExcelReport report = getExcelReport();
