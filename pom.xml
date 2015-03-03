@@ -4,7 +4,7 @@
    <groupId>com.github.vsspt</groupId>
    <artifactId>excel-exporter</artifactId>
    <packaging>jar</packaging>
-   <version>1.0.1-SNAPSHOT</version>
+   <version>1.0.0-SNAPSHOT</version>
    <name>Microsoft Excel Exporter</name>
    <description>Exports Java Lists to Microsoft Excel Reports.</description>
    <url>https://github.com/vsspt/excel-exporter</url>
