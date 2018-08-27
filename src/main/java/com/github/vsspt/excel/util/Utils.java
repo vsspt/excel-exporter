@@ -14,10 +14,11 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.text.WordUtils;
 import org.apache.commons.lang3.time.DateFormatUtils;
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
-import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.hssf.util.HSSFColor.HSSFColorPredefined;
+import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.Workbook;
 
@@ -74,12 +75,12 @@ public final class Utils {
 
 	public static CellStyle createColumnHeaderCellStyle(final Workbook workbook) {
 		final CellStyle cellStyle = workbook.createCellStyle();
-		cellStyle.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
-		cellStyle.setFillBackgroundColor(new HSSFColor.BLUE().getIndex());
-		cellStyle.setBorderTop(HSSFCellStyle.BORDER_THIN);
-		cellStyle.setBorderLeft(HSSFCellStyle.BORDER_THIN);
-		cellStyle.setBorderBottom(HSSFCellStyle.BORDER_THIN);
-		cellStyle.setBorderRight(HSSFCellStyle.BORDER_THIN);
+		cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        cellStyle.setFillBackgroundColor(HSSFColorPredefined.BLUE.getIndex());
+		cellStyle.setBorderTop(BorderStyle.THIN);
+		cellStyle.setBorderLeft(BorderStyle.THIN);
+		cellStyle.setBorderBottom(BorderStyle.THIN);
+		cellStyle.setBorderRight(BorderStyle.THIN);
 		cellStyle.setWrapText(Boolean.FALSE);
 		cellStyle.setFont(getHeaderFont(workbook));
 
@@ -90,8 +91,8 @@ public final class Utils {
 		final Font font = workbook.createFont();
 		font.setFontHeightInPoints(HEADER_SIZE);
 		font.setFontName(FONT_NAME);
-		font.setBoldweight(Font.BOLDWEIGHT_BOLD);
-		font.setColor(HSSFColor.WHITE.index);
+		font.setBold(true);
+		font.setColor(HSSFColorPredefined.WHITE.getIndex());
 		return font;
 	}
 
